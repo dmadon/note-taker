@@ -6,6 +6,7 @@ const { v4: uuidv4, parse } = require('uuid');
 const { createNewNote } = require('../../functions');
 
 
+
 router.get('/notes',(req,res)=>{
     let data = notes;
     // if(req.query){
@@ -35,7 +36,8 @@ router.post('/notes',(req,res) => {
    
 
     const note = createNewNote(req.body, notes);
-    // res.json(note);
+    res.json(note);
+
 
 
 
