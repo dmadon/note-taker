@@ -26,12 +26,15 @@
 
   ## Links
 
-  * [View my github profile](https://github.com/dmadon)
+  * View my GitHub profile: https://github.com/dmadon
   * View the deployed Heroku application: https://note-taker-module11.herokuapp.com/
 
   ## Preview
   
   ![image](https://user-images.githubusercontent.com/99852346/183232551-a8749d6c-c14f-450e-9c4c-8a97690e1f06.png)
+  
+  ![image](https://user-images.githubusercontent.com/99852346/183232573-da07ada9-70a3-4ac1-adf9-eadd23a39e4c.png)
+
 
   
   
