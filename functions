@@ -2,10 +2,13 @@ const fs = require('fs');
 const path = require('path');
 
 function createNewNote(body,notesArray){
-    console.log(body);
-    // function's main code:
+    // package up the new note data into a variable called "newNote"
     const newNote = body;
-    notesArray.push(newNote)
+
+    // push the "newNote" into the existing array of notes
+    notesArray.push(newNote);
+    
+    // write the updated array back to db.json
     fs.writeFileSync(
         path.join(__dirname,'./db/db.json'),
         JSON.stringify(notesArray, null, 2)
@@ -15,4 +18,23 @@ function createNewNote(body,notesArray){
     return newNote;
 };
 
-module.exports = {createNewNote};
+function findById(id, notesArray){
+    // find index of object in the notesArray where the id of that object 
+    // matches the id of the note that was selected for deletion
+    let index = notesArray.findIndex(element=>element.id === id);
+
+    // remove the object at the given index
+    notesArray.splice(index,1);
+    
+    // write the updated array back to db.json
+    fs.writeFileSync(
+        path.join(__dirname,'./db/db.json'),
+        JSON.stringify(notesArray, null, 2)
+    );
+
+    // return finished code to post route for response
+    return notesArray;
+
+};
+
+module.exports = {createNewNote, findById};

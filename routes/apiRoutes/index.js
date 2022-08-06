@@ -1,59 +1,45 @@
 const router = require('express').Router();
 const fs = require('fs');
-// const {filterByQuery, findById, createNewAnimal, validateAnimal} = require('../../lib/animals');
 const notes = require('../../db/db.json');
 const { v4: uuidv4, parse } = require('uuid');
-const { createNewNote } = require('../../functions');
+const { createNewNote, findById } = require('../../functions');
 
 
 
 router.get('/notes',(req,res)=>{
+    // gets the saved notes from db.json to be rendered on the notes page
     let data = notes;
-    // if(req.query){
-    //     results = filterByQuery(req.query,results);
-    // }
     res.json(data);
-    console.log('Current note array: '+JSON.stringify(data));
-
 });
 
-router.get('/notes/:id', (req, res) => {
+router.delete('/notes/:id', (req, res) => {
+    // calls findById function and passes in the id of the note that was
+    // selected for deletion, as well as the array of saved notes
+    // so that db.json can be updated
     const result = findById(req.params.id, notes);
+    
+        // if the findById function successfully returned valid data,
+        // return the result as json
         if(result){
             res.json(result);
-            console.log(result)
         }
+        // otherwise, return 404 error
         else{
             res.sendStatus(404);
         }
-  });
+});
 
 router.post('/notes',(req,res) => {
-    // req.body is where our incoming content will be
-    // set id generated from the npm uuid package
+    // set id (generated from the npm uuid package) as a property
+    // in the req.body object
     req.body.id = uuidv4();
-    console.log('New note: '+JSON.stringify(req.body));
-   
-
-    const note = createNewNote(req.body, notes);
-    res.json(note);
-
-
-
-
-    // if any data in req.body is incorrect, send 400 error back
-    // if(!validateNotes(req.body)){
-    //     res.status(400).send("This data is not properly formatted. Please ensure that all properties are completed with the correct data type.");
-    // }
-    // else{
-    //     const note = createNewNote(req.body, notes);
-    //     res.json(note);
-    // }
-
-
-
-
     
+    // calls creatNewNote function and passes in our note data, as well as
+    // the array of saved notes so db.json can be updated
+    const note = createNewNote(req.body, notes);
+
+    // return the new note so it can be rendered on the notes page
+    res.json(note);  
 });
 
 module.exports = router;
