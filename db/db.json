@@ -1,12 +1,22 @@
 [
   {
-    "title": "First Saved Note",
-    "text": "Note 1",
-    "id": "2a94d5b8-8a08-4f76-8a1a-3bc0d6a89d78"
+    "title": "Finish Module 11 Challenge",
+    "text": "Deploy finished application to Heroku",
+    "id": "257e3d00-0b68-4877-a1bc-b3aae495cd46"
   },
   {
-    "title": "Third Saved Note",
-    "text": "Note 3",
-    "id": "5f78a750-350b-4d3c-a8f3-49f8211ac16e"
+    "title": "Screenshots",
+    "text": "Take some screenshots of the deployed application and save them in the repository files so you can add them to the readme file.",
+    "id": "aca318d8-066d-4510-b4d2-e7e56b829986"
+  },
+  {
+    "title": "Readme",
+    "text": "Generate a readme file for the Note Taker repository",
+    "id": "7e3f9336-e23a-4159-a13e-51457e4dd9de"
+  },
+  {
+    "title": "Submit Assignment",
+    "text": "Submit the link to the deployed heroku application and the link to the project repository for grading",
+    "id": "022f4839-0807-4d5d-a42f-6fe9a96dd6dc"
   }
 ]
