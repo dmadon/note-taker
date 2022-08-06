@@ -10,7 +10,8 @@
   * [Installation](#installation)
   * [Usage](#usage)
   * [License](#license)
-  * [Questions](#questions)
+  * [Links](#links)
+  * [Preview](#preview)
 
   ## Installation
   This application is deployed with Heroku at https://note-taker-module11.herokuapp.com/. No istallation required to use this app.
@@ -23,7 +24,11 @@
 
   [MIT License Information](https://opensource.org/licenses/MIT)
 
-  ## Questions
+  ## Links
 
   * [View my github profile](https://github.com/dmadon)
-  * If you have questions about this project, you can email me at deanna.madon@gmail.com
+  * View the deployed Heroku application: https://note-taker-module11.herokuapp.com/
+
+  ## Preview
+  
+  
